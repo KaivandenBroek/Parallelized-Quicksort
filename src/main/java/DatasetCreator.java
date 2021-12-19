@@ -16,9 +16,12 @@ public class DatasetCreator {
     public void listToSongs() {
 
         List<List<String>> lines = readCSV();
-        for (List<String> line : lines) {
+        for (List<String> line : lines.subList(1, lines.size())) {
+            // skip first line
             Song song = Song.lineToSong(line);
             songs.put(song.getId(), song);
+
+
         }
     }
 

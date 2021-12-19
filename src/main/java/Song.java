@@ -4,7 +4,7 @@ public class Song {
 
     private final static int DANCEABILITY = 0;
     private final static int ENERGY = 1;
-    private final static int ID = 13;
+    private final static int ID = 12;
     private final static int DURATION_MS = 17;
     private final static int GENRE = 19;
     private final static int NAME = 20;

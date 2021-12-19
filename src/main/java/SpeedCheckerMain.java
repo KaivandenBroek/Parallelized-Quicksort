@@ -10,6 +10,9 @@ public class SpeedCheckerMain {
         datasetCreator.listToSongs();
         Map<String, Song> songs = datasetCreator.getSongs();
 
+        // just checking the songs list
+        System.out.println((long) songs.values().size());
+
         // TODO measure time
         //sorter.quickSort(songs, //TODO comperator);
 
