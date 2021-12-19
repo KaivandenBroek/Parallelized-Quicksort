@@ -3,7 +3,7 @@ import junit.runner.Sorter;
 import java.util.Comparator;
 import java.util.List;
 
-public class Quicksort<E> extends Sorter {
+public class Quicksort<Song> extends Sorter {
 
     /**
      * Sorts all items by quick sort using the provided comparator for deciding
@@ -12,7 +12,7 @@ public class Quicksort<E> extends Sorter {
      *
      * @return the items sorted in place
      */
-    public List<E> quickSort(List<E> items, Comparator<E> comparator) {
+    public List<Song> quickSort(List<Song> items, Comparator<Song> comparator) {
         // sort the complete list of items from position 0 till size-1, including
         // position size
         this.quickSortPart(items, 0, items.size() - 1, comparator);
@@ -25,12 +25,11 @@ public class Quicksort<E> extends Sorter {
      * sort using the provided comparator for deciding relative ordening of two
      * items Items are sorted 'in place' without use of an auxiliary list or array
      * or other positions in items
-     *
+     * <p>
      * // create pivot from the middle of the list
      * E pivot = items.get((F + T) / 2);
-     *
      */
-    private void quickSortPart(List<E> items, int from, int to, Comparator<E> comparator) {
+    private void quickSortPart(List<Song> items, int from, int to, Comparator<Song> comparator) {
 
         // quick sort the sublist of items between index positions 'from' and 'to'
         // inclusive
@@ -39,7 +38,7 @@ public class Quicksort<E> extends Sorter {
 
         if (T > F) {
             // create pivot from the middle of the list
-            E pivot = medianOfThree(items, F, T, comparator);
+            Song pivot = medianOfThree(items, F, T, comparator);
             while (F <= T) {
                 //
                 while (F < to && comparator.compare(items.get(F), pivot) < 0) {
@@ -65,13 +64,13 @@ public class Quicksort<E> extends Sorter {
 
     }
 
-    void swap(List<E> arr, int from, int to) {
-        E F = arr.get(from);
+    void swap(List<Song> arr, int from, int to) {
+        Song F = arr.get(from);
         arr.set(from, arr.get(to));
         arr.set(to, F);
     }
 
-    E medianOfThree(List<E> list, int left, int right, Comparator<E> comparator) {
+    Song medianOfThree(List<Song> list, int left, int right, Comparator<Song> comparator) {
 
         int center = (left + right) / 2;
         if (comparator.compare(list.get(center), list.get(left)) < 0)
